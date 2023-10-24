@@ -7,3 +7,9 @@
         - uses: actions/checkout@v4
         - name: Hello
           run: echo "Hello!!! from ${{github.workflow }} triggered byt the ${{github.event_name}}"
+        - name: other step
+          env:
+            JOB_CONTEXT: ${{ totoJson(jojob) }}
+          run: |
+            echo "job context: $JOB_CONTEXT"
+            echo "Done"
